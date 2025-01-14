@@ -89,14 +89,14 @@ const EcommerceROICalculator = () => {
 								/>
 							</div>
 
-							<div className='flex items-center'>
-								<span className='text-xs mr-1'>$</span>
+							<div className='flex border items-center rounded px-2 w-fit bg-white'>
+								<span className='text-xl font-bold text-[#0a63ed]'>$</span>
 								<input
 									type='text'
 									name='cpc'
 									onChange={handleChange}
 									value={inputs.cpc}
-									className='border rounded px-2 w-16 text-sm text-center'
+									className='w-20 text-center text-[#0a63ed] font-bold text-xl focus:outline-none'
 								/>
 							</div>
 						</div>
@@ -125,13 +125,14 @@ const EcommerceROICalculator = () => {
 								/>
 							</div>
 
-							<div className='flex items-center'>
+							<div className='flex border items-center rounded px-2 w-fit bg-white'>
+								<span className='text-xl font-bold text-[#0a63ed]'>$</span>
 								<input
 									type='text'
 									name='adSpend'
 									onChange={handleChange}
 									value={inputs.adSpend}
-									className='border rounded px-2 w-16 text-sm text-center'
+									className='w-20 text-center text-[#0a63ed] font-bold text-xl focus:outline-none'
 								/>
 							</div>
 						</div>
@@ -161,15 +162,15 @@ const EcommerceROICalculator = () => {
 								/>
 							</div>
 
-							<div className='flex items-center'>
+							<div className='flex border items-center rounded px-2 w-fit bg-white'>
 								<input
 									type='text'
 									name='conversionRate'
 									onChange={handleChange}
 									value={inputs.conversionRate}
-									className='border rounded px-2 w-16 text-sm text-center'
+									className='w-20 text-center text-[#0a63ed] font-bold text-xl focus:outline-none'
 								/>
-								<span className='text-xs ml-1'>%</span>
+								<span className='text-xl font-bold text-[#0a63ed]'>%</span>
 							</div>
 						</div>
 
@@ -196,14 +197,14 @@ const EcommerceROICalculator = () => {
 								/>
 							</div>
 
-							<div className='flex items-center'>
-								<span className='text-xs mr-1'>$</span>
+							<div className='flex border items-center rounded px-2 w-fit bg-white'>
+								<span className='text-xl font-bold text-[#0a63ed]'>$</span>
 								<input
 									type='text'
 									name='avgCustomerValue'
 									onChange={handleChange}
 									value={inputs.avgCustomerValue}
-									className='border rounded px-2 w-16 text-sm text-center'
+									className='w-20 text-center text-[#0a63ed] font-bold text-xl focus:outline-none'
 								/>
 							</div>
 						</div>
@@ -231,15 +232,15 @@ const EcommerceROICalculator = () => {
 								/>
 							</div>
 
-							<div className='flex items-center'>
+							<div className='border flex items-center rounded px-2 w-fit bg-white'>
 								<input
 									type='text'
 									name='avgProfitMargin'
 									onChange={handleChange}
 									value={inputs.avgProfitMargin}
-									className='border rounded px-2 w-16 text-sm text-center'
+									className='w-20 text-center text-[#0a63ed] font-bold text-xl focus:outline-none'
 								/>
-								<span className='text-xs ml-1'>%</span>
+								<span className='text-xl font-bold text-[#0a63ed]'>%</span>
 							</div>
 						</div>
 					</div>

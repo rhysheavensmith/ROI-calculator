@@ -71,7 +71,6 @@ const ServiceROICalculator = () => {
 								What is the average cost per click for keywords relating to your
 								business?
 							</p>
-
 							<div className='flex flex-col gap-1 w-1/3'>
 								<label
 									htmlFor='cpc'
@@ -90,15 +89,14 @@ const ServiceROICalculator = () => {
 									className='w-full'
 								/>
 							</div>
-
-							<div className='flex items-center'>
-								<span className='text-xs mr-1'>$</span>
+							<div className='flex border items-center rounded px-2 w-fit bg-white'>
+								<span className='text-xl font-bold text-[#0a63ed]'>$</span>
 								<input
 									type='text'
 									name='cpc'
 									onChange={handleChange}
 									value={inputs.cpc}
-									className='border rounded px-2 w-16 text-sm text-center'
+									className='w-20 text-center text-[#0a63ed] font-bold text-xl focus:outline-none'
 								/>
 							</div>
 						</div>
@@ -107,8 +105,7 @@ const ServiceROICalculator = () => {
 							<p className='w-1/3 text-sm font-light text-slate-500'>
 								How much do you intend to spend on your ad campaign?
 							</p>
-
-							<div className='flex flex-col gap-2 w-1/3'>
+							<div className='flex flex-col gap-1 w-1/3'>
 								<label
 									htmlFor='adSpend'
 									className='font-semibold text-sm text-slate-500'
@@ -126,15 +123,14 @@ const ServiceROICalculator = () => {
 									className='w-full'
 								/>
 							</div>
-
-							<div className='flex items-center'>
-								<span className='text-xs mr-1'>$</span>
+							<div className='flex border items-center rounded px-2 w-fit bg-white'>
+								<span className='text-xl font-bold text-[#0a63ed]'>$</span>
 								<input
 									type='text'
 									name='adSpend'
 									onChange={handleChange}
 									value={inputs.adSpend}
-									className='border rounded px-2 w-16 text-sm text-center'
+									className='w-20 text-center text-[#0a63ed] font-bold text-xl focus:outline-none'
 								/>
 							</div>
 						</div>
@@ -142,10 +138,9 @@ const ServiceROICalculator = () => {
 						<div className='items-center flex gap-3 border-b border-slate-200 pb-3 justify-between'>
 							<p className='w-1/3 text-sm font-light text-slate-500'>
 								What is the conversion rate (CVR) of visitors to your website
-								that become new leads?
+								that become leads?
 							</p>
-
-							<div className='flex flex-col gap-2 w-1/3'>
+							<div className='flex flex-col gap-1 w-1/3'>
 								<label
 									htmlFor='conversionRate'
 									className='font-semibold text-sm text-slate-500'
@@ -163,16 +158,15 @@ const ServiceROICalculator = () => {
 									className='w-full'
 								/>
 							</div>
-
-							<div className='flex items-center'>
+							<div className='flex border items-center rounded px-2 w-fit bg-white'>
 								<input
 									type='text'
 									name='conversionRate'
 									onChange={handleChange}
 									value={inputs.conversionRate}
-									className='border rounded px-2 w-16 text-sm text-center'
+									className='w-20 text-center text-[#0a63ed] font-bold text-xl focus:outline-none'
 								/>
-								<span className='text-xs ml-1'>%</span>
+								<span className='text-xl font-bold text-[#0a63ed]'>%</span>
 							</div>
 						</div>
 
@@ -180,7 +174,7 @@ const ServiceROICalculator = () => {
 							<p className='w-1/3 text-sm font-light text-slate-500'>
 								How many of your leads turn into customers?
 							</p>
-							<div className='flex flex-col gap-2 w-1/3'>
+							<div className='flex flex-col gap-1 w-1/3'>
 								<label
 									htmlFor='closeRate'
 									className='font-semibold text-sm text-slate-500'
@@ -198,24 +192,23 @@ const ServiceROICalculator = () => {
 									className='w-full'
 								/>
 							</div>
-
-							<div className='flex items-center'>
+							<div className='flex border items-center rounded px-2 w-fit bg-white'>
 								<input
 									type='text'
 									name='closeRate'
 									onChange={handleChange}
 									value={inputs.closeRate}
-									className='border rounded px-2 w-16 text-sm text-center'
+									className='w-20 text-center text-[#0a63ed] font-bold text-xl focus:outline-none'
 								/>
-								<span className='text-xs ml-1'>%</span>
+								<span className='text-xl font-bold text-[#0a63ed]'>%</span>
 							</div>
 						</div>
 
-						<div className='flex items-center gap-3 border-b border-slate-200 pb-3 justify-between'>
+						<div className='items-center flex gap-3 border-b border-slate-200 pb-3 justify-between'>
 							<p className='w-1/3 text-sm font-light text-slate-500'>
 								On average, how much is each customer worth to your business?
 							</p>
-							<div className='flex flex-col gap-2 w-1/3'>
+							<div className='flex flex-col gap-1 w-1/3'>
 								<label
 									htmlFor='avgCustomerValue'
 									className='font-semibold text-sm text-slate-500'
@@ -233,24 +226,23 @@ const ServiceROICalculator = () => {
 									className='w-full'
 								/>
 							</div>
-
-							<div className='flex items-center'>
-								<span className='text-xs mr-1'>$</span>
+							<div className='flex border items-center rounded px-2 w-fit bg-white'>
+								<span className='text-xl font-bold text-[#0a63ed]'>$</span>
 								<input
 									type='text'
 									name='avgCustomerValue'
 									onChange={handleChange}
 									value={inputs.avgCustomerValue}
-									className='border rounded px-2 w-16 text-sm text-center'
+									className='w-20 text-center text-[#0a63ed] font-bold text-xl focus:outline-none'
 								/>
 							</div>
 						</div>
 
-						<div className='flex items-center gap-3 justify-between'>
+						<div className='items-center flex gap-3 justify-between'>
 							<p className='w-1/3 text-sm font-light text-slate-500'>
 								What percentage of each sale is profit?
 							</p>
-							<div className='flex flex-col gap-2 w-1/3'>
+							<div className='flex flex-col gap-1 w-1/3'>
 								<label
 									htmlFor='avgProfitMargin'
 									className='font-semibold text-sm text-slate-500'
@@ -268,16 +260,15 @@ const ServiceROICalculator = () => {
 									className='w-full'
 								/>
 							</div>
-
-							<div className='flex items-center'>
+							<div className='flex border items-center rounded px-2 w-fit bg-white'>
 								<input
 									type='text'
 									name='avgProfitMargin'
 									onChange={handleChange}
 									value={inputs.avgProfitMargin}
-									className='border rounded px-2 w-16 text-sm text-center'
+									className='w-20 text-center text-[#0a63ed] font-bold text-xl focus:outline-none'
 								/>
-								<span className='text-xs ml-1'>%</span>
+								<span className='text-xl font-bold text-[#0a63ed]'>%</span>
 							</div>
 						</div>
 					</div>
@@ -286,13 +277,12 @@ const ServiceROICalculator = () => {
 				{/* Right: Results */}
 				<div className='flex-1 bg-[#0a63ed] text-[#d7e7ff] rounded-lg p-4'>
 					<div className='flex flex-col items-center gap-4'>
-						<img src={logo} alt='yikes logo' className='h-12' />
+						<img src={logo} alt='logo' className='h-12' />
 						<p className='text-lg font-forma-regular mb-4'>
 							Based on these numbers, here is what you could expect for return
 							on investment*
 						</p>
 					</div>
-
 					<div className='flex flex-col gap-4'>
 						<p className='text-md flex justify-between border-b border-white pb-2'>
 							<span>Visits:</span> <span>{results.visits}</span>
@@ -309,7 +299,6 @@ const ServiceROICalculator = () => {
 						<p className='text-md flex justify-between border-b border-white pb-2'>
 							<span>Revenue:</span> <span>${results.revenue}</span>
 						</p>
-
 						<p className='text-md flex justify-between border-b border-white pb-2'>
 							<span>Profit:</span> <span>${results.profit}</span>
 						</p>
