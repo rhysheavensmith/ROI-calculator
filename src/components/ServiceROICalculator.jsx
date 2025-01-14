@@ -11,8 +11,6 @@ const ServiceROICalculator = () => {
 		avgProfitMargin: 1, // Average profit margin (as percentage)
 	});
 
-	const [showProfit, setShowProfit] = useState(false); // Toggle for profit calculations
-
 	const [results, setResults] = useState({
 		visits: 0,
 		leads: 0,
@@ -26,9 +24,26 @@ const ServiceROICalculator = () => {
 	const handleChange = (e) => {
 		const { name, value } = e.target;
 
+		let parsedValue = parseFloat(value);
+
+		// Constrain parsedValue for specific inputs
+		const constraints = {
+			cpc: { min: 0.1, max: 400 },
+			adSpend: { min: 100, max: 100000 },
+			conversionRate: { min: 0.5, max: 100 },
+			closeRate: { min: 1, max: 100 },
+			avgCustomerValue: { min: 100, max: 500000 },
+			avgProfitMargin: { min: 1, max: 99 },
+		};
+
+		if (constraints[name]) {
+			const { min, max } = constraints[name];
+			parsedValue = Math.min(Math.max(parsedValue || 0, min), max);
+		}
+
 		const updatedInputs = {
 			...inputs,
-			[name]: parseFloat(value) || 0,
+			[name]: parsedValue,
 		};
 
 		setInputs(updatedInputs);
@@ -37,20 +52,6 @@ const ServiceROICalculator = () => {
 		setResults(
 			calculateROI({
 				...updatedInputs,
-				avgProfitMargin: showProfit ? updatedInputs.avgProfitMargin : 0, // Include or exclude profit margin
-			})
-		);
-	};
-
-	const handleToggleProfit = () => {
-		const updatedShowProfit = !showProfit;
-		setShowProfit(updatedShowProfit);
-
-		// Recalculate when toggling profit margin
-		setResults(
-			calculateROI({
-				...inputs,
-				avgProfitMargin: updatedShowProfit ? inputs.avgProfitMargin : 0,
 			})
 		);
 	};
@@ -81,8 +82,18 @@ const ServiceROICalculator = () => {
 									onChange={handleChange}
 									className='w-full'
 								/>
-								<span className='ml-4 text-sm text-gray-700'>
+								{/* <span className='ml-4 text-sm text-gray-700'>
 									${inputs.cpc.toFixed(2)}
+								</span> */}
+								<span className='flex justify-center items-center ml-4 gap-1'>
+									<p>$</p>
+									<input
+										type='text'
+										name='cpc'
+										onChange={handleChange}
+										value={inputs.cpc}
+										className='w-20 border border-gray-300 p-1 rounded'
+									/>
 								</span>
 							</div>
 						</div>
@@ -101,8 +112,15 @@ const ServiceROICalculator = () => {
 									onChange={handleChange}
 									className='w-full'
 								/>
-								<span className='ml-4 text-sm text-gray-700'>
-									${inputs.adSpend}
+								<span className='flex justify-center items-center ml-4 gap-1'>
+									<p>$</p>
+									<input
+										type='text'
+										name='adSpend'
+										onChange={handleChange}
+										value={inputs.adSpend}
+										className='w-20 border border-gray-300 p-1 rounded'
+									/>
 								</span>
 							</div>
 						</div>
@@ -122,8 +140,15 @@ const ServiceROICalculator = () => {
 									onChange={handleChange}
 									className='w-full'
 								/>
-								<span className='ml-4 text-sm text-gray-700'>
-									{inputs.conversionRate}%
+								<span className='flex justify-center items-center ml-4 gap-1'>
+									<input
+										type='text'
+										name='conversionRate'
+										onChange={handleChange}
+										value={inputs.conversionRate}
+										className='w-20 border border-gray-300 p-1 rounded'
+									/>
+									<p>%</p>
 								</span>
 							</div>
 						</div>
@@ -142,8 +167,15 @@ const ServiceROICalculator = () => {
 									onChange={handleChange}
 									className='w-full'
 								/>
-								<span className='ml-4 text-sm text-gray-700'>
-									{inputs.closeRate}%
+								<span className='flex justify-center items-center ml-4 gap-1'>
+									<input
+										type='text'
+										name='closeRate'
+										onChange={handleChange}
+										value={inputs.closeRate}
+										className='w-20 border border-gray-300 p-1 rounded'
+									/>
+									<p>%</p>
 								</span>
 							</div>
 						</div>
@@ -162,46 +194,46 @@ const ServiceROICalculator = () => {
 									onChange={handleChange}
 									className='w-full'
 								/>
-								<span className='ml-4 text-sm text-gray-700'>
-									${inputs.avgCustomerValue}
-								</span>
-							</div>
-						</div>
-						<div>
-							<label className='flex items-center space-x-2'>
-								<input
-									type='checkbox'
-									checked={showProfit}
-									onChange={handleToggleProfit}
-									className='form-checkbox text-blue-600'
-								/>
-								<span className='text-sm font-medium text-gray-700'>
-									Show Profit Margin Calculations
-								</span>
-							</label>
-						</div>
-						{showProfit && (
-							<div>
-								<label className='block text-sm font-medium text-gray-700 mb-1'>
-									What percentage of each sale is profit?
-								</label>
-								<div className='flex items-center'>
+								<span className='flex justify-center items-center ml-4 gap-1'>
+									<p>$</p>
 									<input
-										type='range'
-										name='avgProfitMargin'
-										min='1'
-										max='99'
-										step='1'
-										value={inputs.avgProfitMargin}
+										type='text'
+										name='avgCustomerValue'
 										onChange={handleChange}
-										className='w-full'
+										value={inputs.avgCustomerValue}
+										className='w-20 border border-gray-300 p-1 rounded'
 									/>
-									<span className='ml-4 text-sm text-gray-700'>
-										{inputs.avgProfitMargin}%
-									</span>
-								</div>
+								</span>
 							</div>
-						)}
+						</div>
+
+						<div>
+							<label className='block text-sm font-medium text-gray-700 mb-1'>
+								What percentage of each sale is profit?
+							</label>
+							<div className='flex items-center'>
+								<input
+									type='range'
+									name='avgProfitMargin'
+									min='1'
+									max='99'
+									step='1'
+									value={inputs.avgProfitMargin}
+									onChange={handleChange}
+									className='w-full'
+								/>
+								<span className='flex justify-center items-center ml-4 gap-1'>
+									<input
+										type='text'
+										name='avgProfitMargin'
+										onChange={handleChange}
+										value={inputs.avgProfitMargin}
+										className='w-20 border border-gray-300 p-1 rounded'
+									/>
+									<p>%</p>
+								</span>
+							</div>
+						</div>
 					</div>
 				</div>
 				{/* Right: Results */}
@@ -240,12 +272,10 @@ const ServiceROICalculator = () => {
 								{results.roi}
 							</span>
 						</p>
-						{showProfit && (
-							<p className='text-lg'>
-								<span className='font-medium text-blue-800'>Profit:</span> $
-								{results.profit}
-							</p>
-						)}
+						<p className='text-lg'>
+							<span className='font-medium text-blue-800'>Profit:</span> $
+							{results.profit}
+						</p>
 					</div>
 				</div>
 			</div>
