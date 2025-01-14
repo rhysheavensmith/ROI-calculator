@@ -10,7 +10,7 @@ const CalculatorTabs = () => {
 		<div className='w-full max-w-[95%] sm:max-w-[80%] mx-auto bg-slate-100 shadow-md'>
 			<div className='flex justify-center m-4'>
 				<button
-					className={`rounded-md px-3 py-2 font-medium ${
+					className={`rounded-md px-3 py-2 font-semibold ${
 						activeTab === 'service'
 							? 'bg-[#0a63ed] text-white'
 							: 'text-[#001738]'
@@ -20,7 +20,7 @@ const CalculatorTabs = () => {
 					Service-Based
 				</button>
 				<button
-					className={`rounded-md px-3 py-2 font-medium ${
+					className={`rounded-md px-3 py-2 font-semibold ${
 						activeTab === 'ecommerce'
 							? 'bg-[#0a63ed] text-white'
 							: 'text-[#001738]'

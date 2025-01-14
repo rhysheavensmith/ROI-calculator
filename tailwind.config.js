@@ -3,13 +3,10 @@ export default {
 	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
 	theme: {
 		extend: {
-			colors: {
-				blue: {
-					500: '#0a63ed',
-				},
-				gray: {
-					50: '#f9fafb',
-				},
+			fontFamily: {
+				'forma-regular': ['forma-regular', 'sans-serif'],
+				'forma-light': ['forma-light', 'sans-serif'],
+				'forma-bold': ['forma-bold', 'sans-serif'],
 			},
 		},
 	},

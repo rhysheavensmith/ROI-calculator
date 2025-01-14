@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	@font-face {
+		font-family: 'forma-bold';
+		src: url('/fonts/forma-djr-display-bold.otf') format('opentype');
+	}
+
+	@font-face {
+		font-family: 'forma-regular';
+		src: url('/fonts/forma-djr-display-regular.otf') format('opentype');
+	}
+
+	@font-face {
+		font-family: 'forma-light';
+		src: url('/fonts/forma-djr-display-light.otf') format('opentype');
+	}
+}

@@ -59,7 +59,7 @@ const ServiceROICalculator = () => {
 
 	return (
 		<div className='mx-auto py-4 px-8 bg-white rounded-lg shadow-md'>
-			<h1 className='text-4xl my-8 font-bold text-center text-[#001738]'>
+			<h1 className='text-4xl my-8 font-forma-bold text-center text-[#001738]'>
 				ROI for Service-Based Businesses
 			</h1>
 			<div className='flex flex-col lg:flex-row gap-6 justify-center items-center'>
@@ -284,10 +284,10 @@ const ServiceROICalculator = () => {
 				</div>
 
 				{/* Right: Results */}
-				<div className='flex-1 bg-[#0a63ed] text-white rounded-lg p-4'>
+				<div className='flex-1 bg-[#0a63ed] text-[#d7e7ff] rounded-lg p-4'>
 					<div className='flex flex-col items-center gap-4'>
 						<img src={logo} alt='yikes logo' className='h-12' />
-						<p className='text-lg font-semibold mb-4'>
+						<p className='text-lg font-forma-regular mb-4'>
 							Based on these numbers, here is what you could expect for return
 							on investment*
 						</p>
