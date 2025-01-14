@@ -7,7 +7,7 @@ const CalculatorTabs = () => {
 	const [activeTab, setActiveTab] = useState('service');
 
 	return (
-		<div className='max-w-[80%] mx-auto bg-slate-100 shadow-md'>
+		<div className='w-full max-w-[95%] sm:max-w-[80%] mx-auto bg-slate-100 shadow-md'>
 			<div className='flex justify-center m-4'>
 				<button
 					className={`rounded-md px-3 py-2 font-medium ${

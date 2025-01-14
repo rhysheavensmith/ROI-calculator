@@ -126,7 +126,6 @@ const EcommerceROICalculator = () => {
 							</div>
 
 							<div className='flex items-center'>
-								<span className='text-xs mr-1'>$</span>
 								<input
 									type='text'
 									name='adSpend'
