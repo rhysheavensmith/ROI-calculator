@@ -34,7 +34,7 @@ const CalculatorResults = ({ results }) => {
 				<p className='text-md flex justify-between border-b border-white pb-2'>
 					<span>Profit:</span> <span>${results.profit}</span>
 				</p>
-				<p className='text-xl font-bold flex justify-between'>
+				<p className='text-xl font-bold flex justify-between text-white font-forma-bold'>
 					<span>Monthly ROI</span> <span>{results.roi}</span>
 				</p>
 			</div>
