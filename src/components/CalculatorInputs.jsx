@@ -7,19 +7,23 @@
  */
 const CalculatorInputs = ({ fields, handleChange, inputs }) => {
 	return (
-		<div className='flex flex-col gap-2'>
+		<div className='flex flex-col gap-2 w-full'>
 			{fields.map((field) => (
 				<div
 					key={field.name}
-					className='items-center flex gap-3 border-b border-slate-200 pb-3 justify-between'
+					className='
+              flex flex-col md:flex-row 
+              gap-3 border-b border-slate-200 pb-3 
+              /* items-center is removed to allow the child elements to stretch */
+            '
 				>
-					{/* Question/Prompt */}
-					<p className='w-1/3 text-sm font-light text-slate-500'>
+					{/* Question/Prompt (hidden on mobile) */}
+					<p className='hidden md:block w-1/3 text-sm font-light text-slate-500'>
 						{field.question}
 					</p>
 
-					{/* Range Slider */}
-					<div className='flex flex-col gap-1 w-1/3'>
+					{/* Range Slider container: full width on mobile, 1/3 on md+ */}
+					<div className='flex flex-col gap-1 w-full md:w-1/3'>
 						<label
 							htmlFor={field.name}
 							className='font-semibold text-sm text-slate-500'
@@ -38,8 +42,14 @@ const CalculatorInputs = ({ fields, handleChange, inputs }) => {
 						/>
 					</div>
 
-					{/* Text Input */}
-					<div className='flex border items-center rounded px-2 w-fit bg-white'>
+					{/* Text Input container: full width on mobile, shrink to content (fit) on md+ */}
+					<div
+						className='
+                flex border items-center rounded px-2 
+                w-full md:w-fit
+                bg-white
+              '
+					>
 						{field.prefix && (
 							<span className='text-xl font-bold text-[#0a63ed]'>
 								{field.prefix}
@@ -50,7 +60,10 @@ const CalculatorInputs = ({ fields, handleChange, inputs }) => {
 							name={field.name}
 							onChange={handleChange}
 							value={inputs[field.name]}
-							className='w-20 text-center text-[#0a63ed] font-bold text-xl focus:outline-none'
+							className='
+                  w-full md:w-20 /* On small screens, fill available width */
+                  text-center text-[#0a63ed] font-bold text-xl focus:outline-none
+                '
 						/>
 						{field.suffix && (
 							<span className='text-xl font-bold text-[#0a63ed]'>
