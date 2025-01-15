@@ -13,7 +13,7 @@ const CalculatorInputs = ({ fields, handleChange, inputs }) => {
 					key={field.name}
 					className='
               flex flex-col md:flex-row 
-              gap-3 border-b border-slate-200 pb-3 
+              gap-3 border-b border-slate-200 pb-3 last:border-b-0 
               /* items-center is removed to allow the child elements to stretch */
             '
 				>
