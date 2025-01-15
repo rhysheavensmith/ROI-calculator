@@ -54,7 +54,7 @@ const CalculatorInputs = ({ fields, handleChange, inputs }) => {
 									name={field.name}
 									onChange={handleChange}
 									value={inputs[field.name]}
-									className='w-full md:w-20 text-center text-[#0a63ed]font-bold text-xl focus:outline-none'
+									className='w-full md:w-20 text-center text-[#0a63ed] font-bold text-xl focus:outline-none'
 								/>
 								{field.suffix && (
 									<span className='text-xl font-bold text-[#0a63ed]'>
