@@ -23,54 +23,56 @@ const CalculatorInputs = ({ fields, handleChange, inputs }) => {
 					</p>
 
 					{/* Range Slider container: full width on mobile, 1/3 on md+ */}
-					<div className='flex flex-col gap-1 w-full md:w-1/3'>
+					<div className='flex flex-col gap-1 w-full'>
 						<label
 							htmlFor={field.name}
 							className='font-semibold text-sm text-slate-500'
 						>
 							{field.label}
 						</label>
-						<input
-							type='range'
-							name={field.name}
-							min={field.min}
-							max={field.max}
-							step={field.step}
-							value={inputs[field.name]}
-							onChange={handleChange}
-							className='w-full'
-						/>
-					</div>
-
-					{/* Text Input container: full width on mobile, shrink to content (fit) on md+ */}
-					<div
-						className='
+						<div className='flex items-center w-full gap-2'>
+							<input
+								type='range'
+								name={field.name}
+								min={field.min}
+								max={field.max}
+								step={field.step}
+								value={inputs[field.name]}
+								onChange={handleChange}
+								className='w-full'
+							/>
+							<div
+								className='
                 flex border items-center rounded px-2 
                 w-full md:w-fit
                 bg-white
               '
-					>
-						{field.prefix && (
-							<span className='text-xl font-bold text-[#0a63ed]'>
-								{field.prefix}
-							</span>
-						)}
-						<input
-							type='text'
-							name={field.name}
-							onChange={handleChange}
-							value={inputs[field.name]}
-							className='
+							>
+								{field.prefix && (
+									<span className='text-xl font-bold text-[#0a63ed]'>
+										{field.prefix}
+									</span>
+								)}
+								<input
+									type='text'
+									name={field.name}
+									onChange={handleChange}
+									value={inputs[field.name]}
+									className='
                   w-full md:w-20 /* On small screens, fill available width */
                   text-center text-[#0a63ed] font-bold text-xl focus:outline-none
                 '
-						/>
-						{field.suffix && (
-							<span className='text-xl font-bold text-[#0a63ed]'>
-								{field.suffix}
-							</span>
-						)}
+								/>
+								{field.suffix && (
+									<span className='text-xl font-bold text-[#0a63ed]'>
+										{field.suffix}
+									</span>
+								)}
+							</div>
+						</div>
 					</div>
+
+					{/* Text Input container: full width on mobile, shrink to content (fit) on md+ */}
 				</div>
 			))}
 		</div>
