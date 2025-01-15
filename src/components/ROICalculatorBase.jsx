@@ -52,7 +52,7 @@ const ROICalculatorBase = ({ title, fieldConfig, initialInputs }) => {
 
 	return (
 		<div className='mx-auto py-4 px-8 bg-white rounded-lg shadow-md'>
-			<h1 className='text-4xl my-8 font-forma-bold text-center text-[#001738]'>
+			<h1 className='text-2xl md:text-4xl my-8 font-forma-bold text-center text-[#001738]'>
 				{title}
 			</h1>
 			<div className='flex flex-col lg:flex-row gap-6 justify-center items-center'>
