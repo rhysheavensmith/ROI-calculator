@@ -11,11 +11,7 @@ const CalculatorInputs = ({ fields, handleChange, inputs }) => {
 			{fields.map((field) => (
 				<div
 					key={field.name}
-					className='
-              flex flex-col md:flex-row 
-              gap-3 border-b border-slate-200 pb-3 last:border-b-0 
-              /* items-center is removed to allow the child elements to stretch */
-            '
+					className='flex flex-col md:flex-row gap-3 border-b border-slate-200 pb-3 last:border-b-0'
 				>
 					{/* Question/Prompt (hidden on mobile) */}
 					<p className='hidden md:block w-1/3 text-sm font-light text-slate-500'>
@@ -58,10 +54,7 @@ const CalculatorInputs = ({ fields, handleChange, inputs }) => {
 									name={field.name}
 									onChange={handleChange}
 									value={inputs[field.name]}
-									className='
-                  w-full md:w-20 /* On small screens, fill available width */
-                  text-center text-[#0a63ed] font-bold text-xl focus:outline-none
-                '
+									className='w-full md:w-20 text-center text-[#0a63ed]font-bold text-xl focus:outline-none'
 								/>
 								{field.suffix && (
 									<span className='text-xl font-bold text-[#0a63ed]'>
@@ -71,8 +64,6 @@ const CalculatorInputs = ({ fields, handleChange, inputs }) => {
 							</div>
 						</div>
 					</div>
-
-					{/* Text Input container: full width on mobile, shrink to content (fit) on md+ */}
 				</div>
 			))}
 		</div>
