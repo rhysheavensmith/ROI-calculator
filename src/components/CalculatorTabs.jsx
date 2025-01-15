@@ -60,9 +60,8 @@ const CalculatorTabs = () => {
 			</div>
 
 			{/* 4. Render the active tab's component */}
-			<div className='p-6 bg-white rounded-lg shadow-md'>
-				<ActiveTabComponent />
-			</div>
+
+			<ActiveTabComponent />
 		</div>
 	);
 };
