@@ -21,7 +21,7 @@ const CalculatorTabs = () => {
 	const ActiveTabComponent = TABS[activeTab].component;
 
 	return (
-		<div className='w-full max-w-[95%] xs:max-w-[85%] mx-auto bg-slate-100 shadow-md p-8'>
+		<div className='w-full max-w-[95%] mx-auto bg-slate-100 shadow-md p-8'>
 			{/* Toggle container (relative) */}
 			<div className='relative w-[300px] mx-auto mb-6'>
 				{/* Sliding background highlight */}
