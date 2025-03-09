@@ -71,12 +71,12 @@ const ServiceROICalculator = () => {
 	];
 
 	const initialInputs = {
-		cpc: 0.1,
-		adSpend: 1000,
-		conversionRate: 0.5,
-		closeRate: 1,
-		avgCustomerValue: 100,
-		avgProfitMargin: 1,
+		cpc: 0,
+		adSpend: 0,
+		conversionRate: 0,
+		closeRate: 0,
+		avgCustomerValue: 0,
+		avgProfitMargin: 0,
 	};
 
 	return (

@@ -6,6 +6,19 @@ export const calculateROI = ({
 	avgCustomerValue,
 	avgProfitMargin,
 }) => {
+	// Guard against invalid inputs that would cause division by zero.
+	if (cpc <= 0 || adSpend <= 0) {
+		return {
+			visits: 0,
+			leads: 0,
+			costPerLead: 0,
+			sales: 0,
+			revenue: 0,
+			profit: 0,
+			roi: '0%',
+		};
+	}
+
 	const conversionRateDecimal = conversionRate / 100;
 	const closeRateDecimal = closeRate / 100;
 	const avgProfitMarginDecimal = avgProfitMargin / 100;
@@ -16,7 +29,7 @@ export const calculateROI = ({
 	const sales = Math.floor(leads * closeRateDecimal);
 	const revenue = Math.floor(sales * avgCustomerValue);
 	const profit = Math.round(revenue * avgProfitMarginDecimal);
-	const roi = adSpend > 0 ? ((revenue - adSpend) / adSpend) * 100 : -100;
+	const roi = ((revenue - adSpend) / adSpend) * 100;
 
 	return {
 		visits,
